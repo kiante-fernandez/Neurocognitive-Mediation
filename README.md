@@ -1,4 +1,5 @@
 <h1>Using Neurocognitive Mediation Analysis to Investigate Spectral Dynamics of Evidence Accumulation Across Domains</h1>
+<em>Kianté Fernandez<sup>1</sup>, Michael D. Nunez<sup>3</sup>, Ian Krajbich<sup>1,2</sup></em></br>1 Department of Psychology, The Ohio State University; 2 Department of Economics, The Ohio State University; 3 Psychological Methods, University of Amsterdam </br> </br>
 
 Decisions can sometimes be classified along two dimensions: subjective versus objective criteria, and evaluation based on stimulus versus representation. Research using EEG and sequential sampling models (SSM) has provided evidence for different spatial and frequency-specific patterns of activation during choice. Yet no work has studied how EEG markers vary along these two dimensions. In our EEG study, participants made decisions in four tasks, one for each combination of dimensions. Our goals were </br>
 
