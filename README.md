@@ -1,6 +1,9 @@
 <h1>Using Neurocognitive Mediation Analysis to Investigate Spectral Dynamics of Evidence Accumulation Across Domains</h1>
 
-Decisions can sometimes be classified along two dimensions: subjective versus objective criteria, and evaluation based on stimulus versus representation. Research using EEG and sequential sampling models (SSM) has provided evidence for different spatial and frequency-specific patterns of activation during choice. Yet no work has studied how EEG markers vary along these two dimensions. In our EEG study, participants made decisions in four tasks, one for each combination of dimensions. Our goals were </br></br> (1) to investigate which EEG markers mediate the relation between stimulus value and drift rate </br>(2) to examine whether these EEG markers differentiate between tasks. To do so, we developed a neurocognitive mediation model to jointly capture EEG, choice, and response times.
+Decisions can sometimes be classified along two dimensions: subjective versus objective criteria, and evaluation based on stimulus versus representation. Research using EEG and sequential sampling models (SSM) has provided evidence for different spatial and frequency-specific patterns of activation during choice. Yet no work has studied how EEG markers vary along these two dimensions. In our EEG study, participants made decisions in four tasks, one for each combination of dimensions. Our goals were </br>
+
+1. to investigate which EEG markers mediate the relation between stimulus value and drift rate </br>
+2. to examine whether these EEG markers differentiate between tasks. To do so, we developed a neurocognitive mediation model to jointly capture EEG, choice, and response times.</br>
 
 <b>Keywords</b>: EEG, neurocognitive modeling, decision-making, evidence accumulation, mediation analysis
   
@@ -8,14 +11,14 @@ Decisions can sometimes be classified along two dimensions: subjective versus ob
 <details>
   <summary>Definitions</summary>
   
-  Neurocognitive modeling</br>
+  **Neurocognitive modeling**</br>
     In Neurocognitive modeling we seek to understand how macro-level neurophysiology (as measured by scalp-recorded EEG) encodes human cognition which gives rise to human behavior (Nunez et al., 2022). It aims to establish links between:</br>
-    (1) brain dynamics as measured by or derived from EEG</br>
-    (2) cognition and other psychological concepts expressed as formal models like evidence accumulation </br>
-    (3) choice and response times </br></br>
+1. brain dynamics as measured by or derived from EEG
+2. cognition and other psychological concepts expressed as formal models like evidence accumulation
+3. choice and response times
  
-  Mediation analysis</br>
-  The aim of Mediation analysis is to determine whether the relation between the independent variable (our experimental manipulation of stimulus difference) and the dependent variable (cognitive model parameters) is due, wholly or in part, to the mediating variable (brain dynamics) </br></br>
+  **Mediation analysis**</br>
+  The aim of Mediation analysis is to determine whether the relation between the independent variable (our experimental manipulation of stimulus difference) and the dependent variable (cognitive model parameters) is due, wholly or in part, to the mediating variable (brain dynamics) </br>
 </details>
 
 <details>
@@ -29,8 +32,7 @@ Stephanie M. Smith and Ian Krajbich. Mental representations distinguish value-ba
 
 <h2>Tasks Description</h2>
 
-  <summary>We followed a similar procedure to Smith and Krajbich (2021) with minor changes to accommodate recording EEG while subjects performed our experimental paradigm. We used a food choice paradigm that consist of two parts: pre-choice ratings, and a two alternative forced choice (2AFC) task across four categories of decisions making. The paradigm consisted of two stages: a pre-choice rating stage to elicit stimulus values for the choice task and a two-alternative forced choice (2AFC) task where participants made 100 binary choices across each of the four decision-making conditions (a total of 400 trials). Across the four decision-making conditions, subjects made decisions with the same sensory stimuli and motor outputs. Using the same stimuli with varying instructions, we could control for the differences that would prevent direct comparisons between the neural computations involved in the four simple choice paradigms. We only recorded EEG during the 2AFC task.
-  </summary>
+We followed a similar procedure to Smith and Krajbich (2021) with minor changes to accommodate recording EEG while subjects performed our experimental paradigm. We used a food choice paradigm that consist of two parts: pre-choice ratings, and a two alternative forced choice (2AFC) task across four categories of decisions making. The paradigm consisted of two stages: a pre-choice rating stage to elicit stimulus values for the choice task and a two-alternative forced choice (2AFC) task where participants made 100 binary choices across each of the four decision-making conditions (a total of 400 trials). Across the four decision-making conditions, subjects made decisions with the same sensory stimuli and motor outputs. Using the same stimuli with varying instructions, we could control for the differences that would prevent direct comparisons between the neural computations involved in the four simple choice paradigms. We only recorded EEG during the 2AFC task.
 
 <details>
     <summary>Pre-choice Ratings</summary>
@@ -52,11 +54,7 @@ To ensure that subjects followed the correct instruction, throughout each mini-b
 </details>
 
 <h2>Neurocognitive Mediation Analysis</h2>
-
-<details>
-  <summary>Bayesian Mediation Analysis</summary>
-  We conducted a neurocognitive mediation analysis for each participant. The critical comparison in our neurocognitive mediation analysis is as follows: If the EEG markers mediated the relationship between stimulus value difference and evidence accumulation rates, the mediation model should have significant indirect effect, $\beta_{indirect_{kf}}$, in the mediation effects controlling for a direct regression of evidence accumulation on stimulus value $\textcolor{violet}{\theta_{k}}$.
-</details>
+We conducted a neurocognitive mediation analysis for each participant. The critical comparison in our neurocognitive mediation analysis is as follows: If the EEG markers mediated the relationship between stimulus value difference and evidence accumulation rates, the mediation model should have significant indirect effect, $\beta_{indirect_{kf}}$ , in the mediation effects controlling for a direct regression of evidence accumulation on stimulus value $\textcolor{violet}{\theta_{k}}$ .</br>
 <details>
   <summary>Model Specification</summary>
  We define <em>I</em> as the pre-choice rating difference for each pair of food images. For any given trial <em>i</em> and condition  <em>k</em>, we define</br>
@@ -93,9 +91,14 @@ $\beta_{indirect_{kf}} =  (\textcolor{blue} {\beta_{kf}} \cdot \frac{\sigma_{EEG
 2) Rafael Polanía, Ian Krajbich, Marcus Grueschow, and Christian C. Ruff. Neural Oscillations and Synchronization
 Differentially Support Evidence Accumulation in Perceptual and Value-Based Decision Making. Neuron, 82(3):
 709–720, May 2014. ISSN 0896-6273. doi:10.1016/j.neuron.2014.03.014
+
 3) Reuben M. Baron and David A. Kenny. The moderator–mediator variable distinction in social psychological research: Conceptual, strategic, and statistical considerations. Journal of Personality and Social Psychology, 51:1173–1182, 1986. ISSN 1939-1315. doi:10.1037/0022-3514.51.6.1173.9
+
 4) Nunez, M. D., Vandekerckhove, J., & Srinivasan, R. (2022, March 4). A tutorial on fitting joint models of M/EEG and behavior to understand cognition. https://doi.org/10.31234/osf.io/vf6t5
+
 5) van Ravenzwaaij, D., Provost, A., and Brown, S. D. (2017). A confirmatory approach for integrating neural and behavioral data into a single model. Journal of Mathematical Psychology, 76:131–141
+
 6) Michael D. Nunez, Joachim Vandekerckhove, and Ramesh Srinivasan. How attention influences perceptual decision making: Single-trial EEG correlates of drift-diffusion model parameters. Journal of Mathematical Psychology, 76: 117–130, February 2017. ISSN 0022-2496. doi:10.1016/j.jmp.2016.03.003.
+
 7) Michael D. Nunez, Aishwarya Gosai, Joachim Vandekerckhove, and Ramesh Srinivasan. The latency of a visual evoked potential tracks the onset of decision making. NeuroImage, 197:93–108, August 2019. ISSN 1053-8119. doi:10.1016/j.neuroimage.2019.04.052
 
