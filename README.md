@@ -3,7 +3,11 @@
 Decisions can sometimes be classified along two dimensions: subjective versus objective criteria, and evaluation based on stimulus versus representation. Research using EEG and sequential sampling models (SSM) has provided evidence for different spatial and frequency-specific patterns of activation during choice. Yet no work has studied how EEG markers vary along these two dimensions. In our EEG study, participants made decisions in four tasks, one for each combination of dimensions. Our goals were </br>
 
 1. to investigate which EEG markers mediate the relation between stimulus value and drift rate </br>
-2. to examine whether these EEG markers differentiate between tasks. To do so, we developed a neurocognitive mediation model to jointly capture EEG, choice, and response times.</br>
+2. to examine whether these EEG markers differentiate between tasks.  </br>
+
+To do so, we developed a neurocognitive mediation model to jointly capture EEG, choice, and response times.</br>
+
+<img src="nma.png" alt="neurocognitive mediation" title="Neurocognitive Mediation Analysis">
 
 <b>Keywords</b>: EEG, neurocognitive modeling, decision-making, evidence accumulation, mediation analysis
   
