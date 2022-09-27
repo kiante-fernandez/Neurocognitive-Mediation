@@ -17,13 +17,13 @@ To do so, we developed a neurocognitive mediation model to jointly capture EEG, 
   <summary>Definitions</summary>
   
   **Neurocognitive modeling**</br>
-    In Neurocognitive modeling we seek to understand how macro-level neurophysiology (as measured by scalp-recorded EEG) encodes human cognition which gives rise to human behavior (Nunez et al., 2022). It aims to establish links between:</br>
+    In Neurocognitive modeling, we seek to understand how macro-level neurophysiology (as measured by scalp-recorded EEG) encodes human cognition, which gives rise to human behavior (Nunez et al., 2022). It aims to establish links between:</br>
 1. brain dynamics as measured by or derived from EEG
 2. cognition and other psychological concepts expressed as formal models like evidence accumulation
 3. choice and response times
  
   **Mediation analysis**</br>
-  The aim of Mediation analysis is to determine whether the relation between the independent variable (our experimental manipulation of stimulus difference) and the dependent variable (cognitive model parameters) is due, wholly or in part, to the mediating variable (brain dynamics) </br>
+    Mediation analysis aims to determine whether the relation between the independent variable (our experimental manipulation of stimulus difference) and the dependent variable (cognitive model parameters) is due, wholly or in part, to the mediating variable (brain dynamics)  </br>
 </details>
 
 <details>
@@ -61,8 +61,14 @@ To ensure that subjects followed the correct instruction, throughout each mini-b
 <h2>Neurocognitive Mediation Analysis</h2>
 We conducted a neurocognitive mediation analysis for each participant. The critical comparison in our neurocognitive mediation analysis is as follows: If the EEG markers mediated the relationship between stimulus value difference and evidence accumulation rates, the mediation model should have significant indirect effect, $\beta_{indirect_{kf}}$ , in the mediation effects controlling for a direct regression of evidence accumulation on stimulus value $\textcolor{violet}{\theta_{k}}$ .</br>
 <details>
+  <summary>Principal component analysis (PCA)</summary>
+  Principal Component analysis (PCA) is a statistical technique for reducing the dimensionality of a dataset. PCA linearly transforms a set of input data into an equal number of linearly-uncorrelated variables (Principal Components, PCs) that cumulatively account for an additional portion of remaining data variance (Kambhatla et al., 1997). To reduce the dimensionality of the data, the minimum set of largest PCs (i.e., the principal subspace) that accounts for at least some pre-defined variance threshold (usually in the range of 80%-95% of original data variance) are considered for further analyses. For example, in the case of highly correlated data (e.g., scalp EEG data), as few as 10 to 15 PCs may account for 95% of data variance. Previous work has used PCA to reduce the dimensionality of the original sensor space to simplify subsequent analyses using computational modeling (Nunez et al., 2015). </br>
+  For this study, to avoid multicollinearity issues, we performed principal components analyses (PCAs; on the four decision conditions jointly) to obtain a smaller number of single trial time-frequency representation (TFR) measures from the EEG data. PCA reduced the 47430 TFR variables (31 channels by 30 frequencies by 51 time-points) to 6 PCs. We use the six PCs as regressors in our neurocognitive mediation analysis.
+</details>
+
+<details>
   <summary>Model Specification</summary>
- We define <em>I</em> as the pre-choice rating difference for each pair of food images. For any given trial <em>i</em> and condition  <em>k</em>, we define</br>
+  <em>I</em> is the pre-choice rating difference for each pair of food images. For any given trial <em>i</em> and condition  <em>k</em>, we define</br>
  
  $I_{ik} =  |r_{ImageAi} - r_{ImageBi}|$</br>
 
@@ -76,7 +82,7 @@ $\sigma_{noise}$, describes the observation noise of the single-trial time-frequ
 
 We assume single-trial EEG measures inform single-trial DDM parameters (Nunez et al., 2017, Nunez et al., 2019).
 
-$\delta_{ik} = \nu_{ik} + \textcolor{orange} {\gamma_{kf}} \cdot EEG_{ikf} + \textcolor{violet}{\theta_{k}} \cdot I_{ik}$</br>
+$\delta_{ik} = \nu_{ik} + \textcolor{orange} {\gamma_{kf}} \cdot EEG_{ikf} + \textcolor{violet}{\theta_{k}} \cdot I_{ik}$ </br>
 
 These single-trial level drifts were entered into the DDM in addition to condition-level boundary separation $\alpha_{k}$ and non-decision time $\tau_{k}$ parameters (with starting point parameter $z$ fixed at 0.5).</br>
 
@@ -84,26 +90,27 @@ $\mathbf{y}_{ik} \sim \mathcal{W}(\delta_{ik},\alpha_{k},\tau_{k}, z)$</br>
 
 After computing the posterior distributions we can calculate the standardized regression weights parameters $\textcolor{blue} {\beta_{kf}}$ and $\textcolor{orange} {\gamma_{kf}}$ by multiplying unstandardized weights. The indirect mediation effect, $\beta_{indirect_{kf}}$ is then calculated by multiplying the standardized regression weights, as discussed by Baron and Kenny (1986).
 
-$\beta_{indirect_{kf}} =  (\textcolor{blue} {\beta_{kf}} \cdot \frac{\sigma_{EEG}}{\sigma_{I}})
+$\beta_{\textcolor{red} {indirect}_{kf}} =  (\textcolor{blue} {\beta_{kf}} \cdot \frac{\sigma_{EEG}}{\sigma_{I}})
 \cdot (\textcolor{orange} {\gamma_{kf}} \cdot \frac{\sigma_{\delta}}{\sigma_{EEG}})$
 
 </details>
 
 <h2>References</h2>
 
-1) Stephanie M. Smith and Ian Krajbich. Mental representations distinguish value-based decisions from perceptual decisions. Psychonomic Bulletin & Review, 28(4):1413–1422, August 2021. ISSN 1531-5320. doi:10.3758/s13423-021-01911-2.
+1) Baron, R. M., & Kenny, D. A. (1986). The moderator–mediator variable distinction in social psychological research: Conceptual, strategic, and statistical considerations. Journal of Personality and Social Psychology, 51, 1173–1182. https://doi.org/10.1037/0022-3514.51.6.1173
 
-2) Rafael Polanía, Ian Krajbich, Marcus Grueschow, and Christian C. Ruff. Neural Oscillations and Synchronization
-Differentially Support Evidence Accumulation in Perceptual and Value-Based Decision Making. Neuron, 82(3):
-709–720, May 2014. ISSN 0896-6273. doi:10.1016/j.neuron.2014.03.014
+2) Kambhatla, N., & Leen, T. K. (1997). Dimension Reduction by Local Principal Component Analysis. Neural Computation, 9(7), 1493–1516. https://doi.org/10.1162/neco.1997.9.7.1493
 
-3) Reuben M. Baron and David A. Kenny. The moderator–mediator variable distinction in social psychological research: Conceptual, strategic, and statistical considerations. Journal of Personality and Social Psychology, 51:1173–1182, 1986. ISSN 1939-1315. doi:10.1037/0022-3514.51.6.1173.9
+3) Nunez, M. D., Gosai, A., Vandekerckhove, J., & Srinivasan, R. (2019). The latency of a visual evoked potential tracks the onset of decision making. NeuroImage, 197, 93–108. https://doi.org/10.1016/j.neuroimage.2019.04.052
 
 4) Nunez, M. D., Vandekerckhove, J., & Srinivasan, R. (2022, March 4). A tutorial on fitting joint models of M/EEG and behavior to understand cognition. https://doi.org/10.31234/osf.io/vf6t5
 
-5) van Ravenzwaaij, D., Provost, A., and Brown, S. D. (2017). A confirmatory approach for integrating neural and behavioral data into a single model. Journal of Mathematical Psychology, 76:131–141
+5) Nunez, M. D., Srinivasan, R., & Vandekerckhove, J. (2015). Individual differences in attention influence perceptual decision making. Frontiers in Psychology, 6. https://www.frontiersin.org/articles/10.3389/fpsyg.2015.00018
 
-6) Michael D. Nunez, Joachim Vandekerckhove, and Ramesh Srinivasan. How attention influences perceptual decision making: Single-trial EEG correlates of drift-diffusion model parameters. Journal of Mathematical Psychology, 76: 117–130, February 2017. ISSN 0022-2496. doi:10.1016/j.jmp.2016.03.003.
+6) Nunez, M. D., Vandekerckhove, J., & Srinivasan, R. (2017). How attention influences perceptual decision making: Single-trial EEG correlates of drift-diffusion model parameters. Journal of Mathematical Psychology, 76, 117–130. https://doi.org/10.1016/j.jmp.2016.03.003
 
-7) Michael D. Nunez, Aishwarya Gosai, Joachim Vandekerckhove, and Ramesh Srinivasan. The latency of a visual evoked potential tracks the onset of decision making. NeuroImage, 197:93–108, August 2019. ISSN 1053-8119. doi:10.1016/j.neuroimage.2019.04.052
+7) Polanía, R., Krajbich, I., Grueschow, M., & Ruff, C. C. (2014). Neural Oscillations and Synchronization Differentially Support Evidence Accumulation in Perceptual and Value-Based Decision Making. Neuron, 82(3), 709–720. https://doi.org/10.1016/j.neuron.2014.03.014
 
+8) Smith, S. M., & Krajbich, I. (2021). Mental representations distinguish value-based decisions from perceptual decisions. Psychonomic Bulletin & Review, 28(4), 1413–1422. https://doi.org/10.3758/s13423-021-01911-2
+
+9) van Ravenzwaaij, D., Provost, A., & Brown, S. D. (2017). A confirmatory approach for integrating neural and behavioral data into a single model. Journal of Mathematical Psychology, 76, 131–141. https://doi.org/10.1016/j.jmp.2016.04.005
